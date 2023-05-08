@@ -1,0 +1,66 @@
+'''
+Créez un programme qui permet à l'utilisateur de gérer sa liste de courses. L'utilisateur doit pouvoir ajouter des éléments à la liste, 
+supprimer des éléments et afficher la liste actuelle des éléments.
+
+Instructions
+Déclaration:
+
+Créer une liste pour stocker les articles d'achat
+- Utiliser une boucle while pour créer un menu d'options permettant à l'utilisateur d'ajouter, de supprimer ou d'afficher des éléments de la liste
+- Utilisez une boucle for pour parcourir la liste des éléments et les afficher à l'utilisateur
+- Utilisez la fonction range() pour limiter le nombre d'éléments pouvant être ajoutés à la liste
+- Utilisez les structures de données de liste, de tuple, d'ensemble et de dictionnaire pour stocker et manipuler les articles d'achat
+Instructions:
+
+Créez une liste nommée 'shopping_list' pour stocker les articles.
+- Utilisez une boucle while pour créer un menu d'options permettant à l'utilisateur d'ajouter, de supprimer ou d'afficher des éléments de la liste.
+- Utilisez la fonction input() pour inviter l'utilisateur à faire une sélection dans le menu.
+- Utilisez un bloc if-elif-else pour déterminer la sélection de l'utilisateur et effectuer l'action correspondante.
+- Si l'utilisateur sélectionne 'ajouter', utilisez la fonction input() pour demander à l'utilisateur d'entrer un élément à ajouter à la liste. Utilisez la fonction range() pour limiter le nombre d'éléments pouvant être ajoutés à la liste.
+- Si l'utilisateur sélectionne 'supprimer', utilisez la fonction input() pour inviter l'utilisateur à saisir un élément à supprimer de la liste.
+- Si l'utilisateur sélectionne "afficher", utilisez une boucle for pour parcourir la liste des éléments et les afficher à l'utilisateur.
+- Utilisez les structures de données de liste, de tuple, d'ensemble et de dictionnaire pour stocker et manipuler les articles d'achat.
+'''
+=======================================================================================================================================
+===================================ANSWERS ANSWERS ANSWERS ANSWERS ANSWERS ANSWERS=====================================================
+=======================================================================================================================================
+
+## create a list to store the shopping items
+shopping_list = []
+
+# use a while loop to create a menu of options for the user to add, remove, or view items from the list
+while True:
+    print("Select an option:")
+    print("1. Add item to the list")
+    print("2. Remove item from the list")
+    print("3. View the list")
+    print("4. Exit")
+    
+    # use the input() function to prompt the user to make a selection from the menu
+    choice = input("Enter choice (1-4): ")
+
+    # use an if-elif-else block to determine the user's selection and perform the corresponding action
+    if choice == '1':
+        # use the range() function to limit the number of items that can be added to the list
+        if len(shopping_list) < 10:
+            item = input("Enter item: ")
+            shopping_list.append(item)
+        else:
+            print("Sorry, the list is full!")
+    elif choice == '2':
+        item = input("Enter item to remove: ")
+        try:
+            shopping_list.remove(item)
+        except ValueError:
+            print("Item not found in the list.")
+    elif choice == '3':
+        # use a for loop to iterate through the list of items and display them to the user
+        print("Shopping List:")
+        for item in shopping_list:
+            print("- " + item)
+    elif choice == '4':
+        # exit the program
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice, please try again.")
